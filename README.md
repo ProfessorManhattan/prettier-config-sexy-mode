@@ -1,24 +1,24 @@
 # Prettier Config Documentation
 
-> Documentation for the `@strv/prettier-config` module.
+> Documentation for the `@megabytelabs/prettier-config` module.
 
 ## Usage
 
 ```sh
 # Yarn:
-yarn add --dev @strv/prettier-config
+yarn add --dev @megabytelabs/prettier-config
 
 # npm:
-npm install --save-dev @strv/prettier-config
+npm install --save-dev @megabytelabs/prettier-config
 ```
 
 And reference it in your _.prettierrc.js_ file:
 
 ```js
-module.exports = require('@strv/prettier-config')
+module.exports = require('@megabytelabs/prettier-config');
 ```
 
-Or you can of course choose your preffered way of using configs:
+Or you can of course choose your preferred way of using configs:
 
 <details>
 <summary><i>package.json</i></summary>
@@ -36,7 +36,7 @@ Or you can of course choose your preffered way of using configs:
 
 ```json
 {
-  "extends": ["@strv/prettier-config"]
+  "extends": ["@megabytelabs/prettier-config"]
 }
 ```
 
@@ -50,11 +50,11 @@ To extend the current options you will need to create a _.prettierrc.js_ and add
 
 ```js
 module.exports = {
-  ...require('@strv/prettier-config'),
+  ...require('@megabytelabs/prettier-config'),
 
   // Add custom options bellow:
-  useTabs: true,
-}
+  useTabs: true
+};
 ```
 
 ## Notes
@@ -66,7 +66,7 @@ Versions of `prettier` prior to v1.17 did not feature the possibility to use a s
 ```js
 // .prettierrc.js
 
-module.exports = require('@strv/prettier-config')
+module.exports = require('@megabytelabs/prettier-config');
 ```
 
 ## More
