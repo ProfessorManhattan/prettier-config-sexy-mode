@@ -4,11 +4,15 @@
 
 ## Usage
 
-```sh
-# Yarn:
-yarn add --dev @megabytelabs/prettier-config
+**Yarn:**
 
-# npm:
+```sh
+yarn add --dev @megabytelabs/prettier-config
+```
+
+**NPM**
+
+```
 npm install --save-dev @megabytelabs/prettier-config
 ```
 
