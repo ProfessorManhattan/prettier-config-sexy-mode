@@ -1,8 +1,6 @@
 ---
 stages:
-  - test
   - deploy
 
 include:
-  - remote: https://gitlab.com/megabyte-space/gitlab-ci-templates/-/raw/master/npm-test.gitlab-ci.yml
   - remote: https://gitlab.com/megabyte-space/gitlab-ci-templates/-/raw/master/npmjs-publish.gitlab-ci.yml
