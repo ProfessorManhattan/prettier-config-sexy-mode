@@ -13,7 +13,7 @@
     "email": "help@megabyte.space",
     "url": "https://gitlab.com/megabyte-space/npm/prettier-config/-/issues"
   },
-  "version": "1.2.521",
+  "version": "1.2.522",
   "main": "index.js",
   "scripts": {
     "commit": "git-cz",
