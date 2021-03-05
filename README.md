@@ -22,7 +22,7 @@ And reference it in your _.prettierrc.js_ file:
 module.exports = require('@megabytelabs/prettier-config');
 ```
 
-Or you can of course choose your preferred way of using configs:
+Or you can, of course, choose your preferred way of using configs:
 
 <details>
 <summary><i>package.json</i></summary>
