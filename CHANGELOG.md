@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.860](https://gitlab.com/megabyte-space/npm/prettier-config/compare/v1.2.859...v1.2.860) (2021-03-05)
+
 ### [1.2.840](https://gitlab.com/megabyte-space/npm/prettier-config/compare/v1.2.839...v1.2.840) (2021-03-05)
 
 CI spun out into an infinite loop so the version is 1.2.840 now.
