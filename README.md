@@ -65,7 +65,7 @@ module.exports = {
 
 ### Prettier version
 
-Versions of `prettier` prior to v1.17 did not feature the possibility to use a shared config via _package.json_. The way to do it is similar to when [extending](#Extending), except that you can just export the config directly:
+Versions of `prettier` prior to v1.17 did not feature the possibility to use a shared config via `package.json`. The way to do it is similar to when [extending](#Extending), except that you can just export the config directly:
 
 ```js
 // .prettierrc.js
