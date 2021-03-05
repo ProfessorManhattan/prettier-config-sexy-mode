@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.795](https://gitlab.com/megabyte-space/npm/prettier-config/compare/v1.2.794...v1.2.795) (2021-03-05)
+
 ### [1.2.794](https://gitlab.com/megabyte-space/npm/prettier-config/compare/v1.2.793...v1.2.794) (2021-03-05)
 
 ### [1.2.793](https://gitlab.com/megabyte-space/npm/prettier-config/compare/v1.2.792...v1.2.793) (2021-03-05)
