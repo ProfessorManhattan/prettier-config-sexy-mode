@@ -61,9 +61,7 @@ module.exports = {
 };
 ```
 
-## Notes
-
-### Prettier version
+## Prettier version
 
 Versions of `prettier` prior to v1.17 did not feature the possibility to use a shared config via `package.json`. The way to do it is similar to when [extending](#Extending), except that you can just export the config directly:
 
