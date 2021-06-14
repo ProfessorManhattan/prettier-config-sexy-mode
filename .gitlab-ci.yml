@@ -1,6 +1,6 @@
 ---
 stages:
-  - deploy
+  - publish
 
 include:
   - remote: https://gitlab.com/megabyte-space/gitlab-ci-templates/-/raw/master/npmjs-publish.gitlab-ci.yml
