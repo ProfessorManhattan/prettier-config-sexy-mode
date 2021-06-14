@@ -2,7 +2,7 @@
 stages:
   - fix
   - lint
-  - deploy
+  - publish
 
 include:
   - remote: https://gitlab.com/megabyte-labs/ci/gitlab-ci-templates/-/raw/master/npmjs-publish.gitlab-ci.yml
