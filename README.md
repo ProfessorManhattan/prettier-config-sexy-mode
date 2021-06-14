@@ -75,5 +75,3 @@ module.exports = require('@megabytelabs/prettier-config')
 
 - [Prettier Documentation](https://prettier.io/docs/en/index.html)
 - [README.md Source](https://github.com/strvcom/code-quality-tools/blob/master/packages/prettier-config/readme.md)
-
-
