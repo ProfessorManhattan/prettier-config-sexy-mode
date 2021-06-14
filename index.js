@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   bracketSpacing: true,
@@ -9,5 +9,5 @@ module.exports = {
   singleQuote: true,
   tabWidth: 2,
   trailingComma: 'none',
-  useTabs: false
-};
+  useTabs: false,
+}
