@@ -57,7 +57,7 @@ module.exports = {
   ...require('@megabytelabs/prettier-config'),
 
   // Add custom options bellow:
-  useTabs: true,
+  useTabs: true
 }
 ```
 
