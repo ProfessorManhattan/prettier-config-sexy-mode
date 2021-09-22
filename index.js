@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 module.exports = {
   bracketSpacing: true,
@@ -9,5 +9,14 @@ module.exports = {
   singleQuote: true,
   tabWidth: 2,
   trailingComma: 'none',
-  useTabs: false
-}
+  useTabs: false,
+  plugins: [
+    '@prettier/plugin-php',
+    '@prettier/plugin-xml',
+    'prettier-plugin-java',
+    'prettier-plugin-organize-imports',
+    'prettier-plugin-package',
+    'prettier-plugin-sh',
+    'prettier-plugin-solidity'
+  ]
+};

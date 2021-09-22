@@ -16,11 +16,11 @@
   "version": "1.2.894",
   "main": "index.js",
   "scripts": {
+    "_postinstall": "husky install",
     "commit": "git-cz",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"index.js\" --write",
     "info": "npm-scripts-info",
-    "postinstall": "husky install",
     "prepare-release": "run-s reset test version",
     "postpublish": "pinst --enable",
     "prepublishOnly": "pinst --disable",
@@ -35,7 +35,16 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "dependencies": {
+    "@prettier/plugin-php": "^0.17.5",
+    "prettier-plugin-java": "^1.4.0",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "prettier-plugin-package": "^1.3.0",
+    "prettier-plugin-sh": "^0.7.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.18"
+  },
   "devDependencies": {
+    "@prettier/plugin-xml": "^1.0.2",
     "cspell": "^5.3.3",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^5.1.1",
