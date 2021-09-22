@@ -13,7 +13,7 @@
     "email": "help@megabyte.space",
     "url": "https://gitlab.com/megabyte-space/npm/prettier-config/-/issues"
   },
-  "version": "2.1.14",
+  "version": "2.2.14",
   "main": "index.js",
   "scripts": {
     "commit": "git-cz",
@@ -47,8 +47,7 @@
     "prettier-plugin-package": "^1.3.0",
     "prettier-plugin-properties": "^0.1.0",
     "prettier-plugin-sh": "^0.7.1",
-    "prettier-plugin-solidity": "^1.0.0-beta.18",
-    "prettier-plugin-toml": "^0.3.1"
+    "prettier-plugin-solidity": "^1.0.0-beta.18"
   },
   "devDependencies": {
     "cspell": "^5.3.3",

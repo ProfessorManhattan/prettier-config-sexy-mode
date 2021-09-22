@@ -19,7 +19,7 @@ npm install --save-dev @megabytelabs/prettier-config
 And reference it in your _.prettierrc.js_ file:
 
 ```js
-module.exports = require('@megabytelabs/prettier-config')
+module.exports = require('@megabytelabs/prettier-config');
 ```
 
 Or you can, of course, choose your preferred way of using configs:
@@ -58,7 +58,7 @@ module.exports = {
 
   // Add custom options bellow:
   useTabs: true
-}
+};
 ```
 
 ## Prettier version
@@ -68,7 +68,7 @@ Versions of `prettier` prior to v1.17 did not feature the possibility to use a s
 ```js
 // .prettierrc.js
 
-module.exports = require('@megabytelabs/prettier-config')
+module.exports = require('@megabytelabs/prettier-config');
 ```
 
 ## More

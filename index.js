@@ -22,7 +22,6 @@ module.exports = {
     'prettier-plugin-package',
     'prettier-plugin-properties',
     'prettier-plugin-sh',
-    'prettier-plugin-solidity',
-    'prettier-plugin-toml'
+    'prettier-plugin-solidity'
   ]
 };
