@@ -12,11 +12,17 @@ module.exports = {
   useTabs: false,
   plugins: [
     '@prettier/plugin-php',
+    '@prettier/plugin-pug',
+    '@prettier/plugin-ruby',
     '@prettier/plugin-xml',
+    'prettier-plugin-go-template',
+    'prettier-plugin-ini',
     'prettier-plugin-java',
     'prettier-plugin-organize-imports',
     'prettier-plugin-package',
+    'prettier-plugin-properties',
     'prettier-plugin-sh',
-    'prettier-plugin-solidity'
+    'prettier-plugin-solidity',
+    'prettier-plugin-toml'
   ]
 };
