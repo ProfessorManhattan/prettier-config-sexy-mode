@@ -13,14 +13,14 @@
     "email": "help@megabyte.space",
     "url": "https://gitlab.com/megabyte-space/npm/prettier-config/-/issues"
   },
-  "version": "1.2.894",
+  "version": "2.0.14",
   "main": "index.js",
   "scripts": {
-    "_postinstall": "husky install",
     "commit": "git-cz",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"index.js\" --write",
     "info": "npm-scripts-info",
+    "postinstall": "husky install",
     "prepare-release": "run-s reset test version",
     "postpublish": "pinst --enable",
     "prepublishOnly": "pinst --disable",
