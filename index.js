@@ -5,11 +5,22 @@ module.exports = {
   printWidth: 120,
   quoteProps: 'as-needed',
   requirePragma: false,
+  phpVersion: '7.4',
   semi: false,
   singleQuote: true,
   tabWidth: 2,
   trailingComma: 'none',
+  trailingCommaPHP: false,
   useTabs: false,
+  goTemplateBracketSpacing: true,
+  overrides: [
+    {
+      files: ["*.go.html"],
+      options: {
+        parser: "go-template",
+      },
+    }
+  ],
   plugins: [
     '@prettier/plugin-php',
     '@prettier/plugin-pug',
