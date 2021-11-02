@@ -68,21 +68,6 @@
     "description": "Simplifies configuring Prettier by bundling plugins and configuring them",
     "overview": "[Prettier](https://prettier.io/) is the defacto standard for formatting JavaScript, TypeScript, JSON, and YML. It rarely, if ever, causes any issues and it makes keeping your code base neater much easier. On top of that, through the use of plugins, you can also use Prettier to format PHP, Pug, Ruby, XML, Go HTML templates, `.ini` files, Java, `.properties` files, shell scripts, and Solidity files.",
     "name": "Prettier",
-    "prettier_dependencies": [
-      ["Prettier Plugin", "Description"]
-    ["[`@prettier/plugin-php`](https://npmjs.com/package/@prettier/plugin-php)", "INSERT_DESCRIPTION_HERE"],
-    ["[`@prettier/plugin-pug`](https://npmjs.com/package/@prettier/plugin-pug)", "INSERT_DESCRIPTION_HERE"],
-    ["[`@prettier/plugin-ruby`](https://npmjs.com/package/@prettier/plugin-ruby)", "INSERT_DESCRIPTION_HERE"],
-    ["[`@prettier/plugin-xml`](https://npmjs.com/package/@prettier/plugin-xml)", "INSERT_DESCRIPTION_HERE"],
-    ["[`prettier-plugin-go-template`](https://npmjs.com/package/prettier-plugin-go-template)", "INSERT_DESCRIPTION_HERE"],
-    ["[`prettier-plugin-ini`](https://npmjs.com/package/prettier-plugin-ini)", "INSERT_DESCRIPTION_HERE"],
-    ["[`prettier-plugin-java`](https://npmjs.com/package/prettier-plugin-java)", "INSERT_DESCRIPTION_HERE"],
-    ["[`prettier-plugin-organize-imports`](https://npmjs.com/package/prettier-plugin-organize-imports)", "INSERT_DESCRIPTION_HERE"],
-    ["[`prettier-plugin-package`](https://npmjs.com/package/prettier-plugin-package)", "INSERT_DESCRIPTION_HERE"],
-    ["[`prettier-plugin-properties`](https://npmjs.com/package/prettier-plugin-properties)", "INSERT_DESCRIPTION_HERE"],
-    ["[`prettier-plugin-sh`](https://npmjs.com/package/prettier-plugin-sh)", "INSERT_DESCRIPTION_HERE"],
-    ["[`prettier-plugin-solidity`](https://npmjs.com/package/prettier-plugin-solidity)", "INSERT_DESCRIPTION_HERE"]
-    ],
     "repository": {
       "github": "https://github.com/ProfessorManhattan/prettier-config",
       "gitlab": "https://gitlab.com/megabyte-labs/npm/configs/prettier"
