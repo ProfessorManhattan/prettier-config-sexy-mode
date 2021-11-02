@@ -17,7 +17,7 @@
     "email": "help@megabyte.space",
     "url": "https://gitlab.com/megabyte-space/npm/prettier-config/-/issues"
   },
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "engines": {
     "node": ">=10"
   },
