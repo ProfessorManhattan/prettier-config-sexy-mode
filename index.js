@@ -19,7 +19,7 @@ module.exports = {
     'prettier-plugin-ini',
     'prettier-plugin-java',
     'prettier-plugin-organize-imports',
-    'prettier-plugin-package',
+    'prettier-plugin-package-fix',
     'prettier-plugin-properties',
     'prettier-plugin-sh',
     'prettier-plugin-solidity'

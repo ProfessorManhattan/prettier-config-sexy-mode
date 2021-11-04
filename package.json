@@ -1,34 +1,28 @@
 {
-  "name": "@megabytelabs/prettier-config",
-  "version": "14.14.14",
   "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
+  "name": "@megabytelabs/prettier-config",
+  "version": "14.14.24",
   "description": "Prettier configuration shared by Megabyte Labs projects",
   "license": "MIT",
+  "author": "Brian Zalewski <help@megabyte.space> (https://megabyte.space)",
+  "homepage": "https://gitlab.com/megabyte-space/npm/prettier-config",
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/megabyte-space/npm/prettier-config.git"
   },
-  "author": "Brian Zalewski <help@megabyte.space> (https://megabyte.space)",
-  "homepage": "https://gitlab.com/megabyte-space/npm/prettier-config",
   "bugs": {
     "email": "help@megabyte.space",
     "url": "https://gitlab.com/megabyte-space/npm/prettier-config/-/issues"
   },
   "main": "index.js",
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
     "commit": "git-cz",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"index.js\" --write",
     "info": "npm-scripts-info",
     "postinstall": "husky install",
-    "postpublish": "pinst --enable",
     "prepare-release": "run-s reset test version",
+    "postpublish": "pinst --enable",
     "prepublishOnly": "pinst --disable",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "test": "run-s test:*",
@@ -36,12 +30,11 @@
     "test:spelling": "cspell \"{README.md,.github/**/*.md,.gitlab/**/*.md,index.js}\"",
     "version": "standard-version --no-verify"
   },
-  "keywords": [
-    "autoformat",
-    "config",
-    "configuration",
-    "prettier"
-  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "@prettier/plugin-php": "^0.17.5",
     "@prettier/plugin-pug": "^1.16.6",
@@ -52,26 +45,33 @@
     "prettier-plugin-ini": "^0.3.1",
     "prettier-plugin-java": "^1.4.0",
     "prettier-plugin-organize-imports": "^2.3.4",
-    "prettier-plugin-package": "^1.3.0",
+    "prettier-plugin-package-fix": "^1.4.0",
     "prettier-plugin-properties": "^0.1.0",
     "prettier-plugin-sh": "^0.7.1",
     "prettier-plugin-solidity": "^1.0.0-beta.18"
   },
   "devDependencies": {
     "cspell": "^5.3.3",
-    "cz-conventional-changelog": "^3.3.0",
+    "cz-conventional-changelog": "^3.0.1",
     "husky": "^5.1.1",
     "lint-staged": "^10.5.4",
     "npm-run-all": "^4.1.5",
-    "npm-scripts-info": "^0.3.9",
+    "npm-scripts-info": "^0.1.0",
     "pinst": "^2.1.6",
     "prettier-package-json": "^2.1.3",
     "standard-version": "^9.0.0"
   },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
+  "keywords": [
+    "autoformat",
+    "config",
+    "configuration",
+    "prettier"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "funding": [
     {
