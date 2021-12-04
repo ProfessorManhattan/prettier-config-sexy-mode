@@ -1,6 +1,4 @@
-'use strict';
-
-module.exports = {
+const prettierOptions = {
   bracketSpacing: true,
   printWidth: 120,
   quoteProps: 'as-needed',
@@ -10,18 +8,31 @@ module.exports = {
   tabWidth: 2,
   trailingComma: 'none',
   useTabs: false,
+  goTemplateBracketSpacing: true,
+  overrides: [
+    {
+      files: ["*.go.html"],
+      options: {
+        parser: "go-template",
+      }
+    },
+    {
+      files: ["*.yml"],
+      options: {
+        printWidth: 160
+      }
+    }
+  ],
   plugins: [
-    '@prettier/plugin-php',
-    '@prettier/plugin-pug',
-    '@prettier/plugin-ruby',
     '@prettier/plugin-xml',
     'prettier-plugin-go-template',
     'prettier-plugin-ini',
-    'prettier-plugin-java',
     'prettier-plugin-organize-imports',
-    'prettier-plugin-package-fix',
+    'prettier-plugin-package-perfection',
     'prettier-plugin-properties',
-    'prettier-plugin-sh',
-    'prettier-plugin-solidity'
+    'prettier-plugin-sh'
   ]
 };
+
+
+module.exports = prettierOptions
