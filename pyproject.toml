@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 homepage = "https://megabyte.space"
 documentation = "https://megabyte.space/docs/npm/config"
-keywords = ["autoformat", "config", "configuration", "prettier"]
+keywords = ["autoformat", "config", "configuration", "mblabs", "megabytelabs", "prettier", "professormanhattan", "washingtondc"]
 include = ["docs/CHANGELOG.md", "LICENSE"]
 classifiers = [
   "Development Status :: 4 - Beta",

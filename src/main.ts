@@ -1,23 +1,15 @@
 const prettierOptions = {
   bracketSpacing: true,
-  printWidth: 120,
-  quoteProps: 'as-needed',
-  requirePragma: false,
-  semi: false,
-  singleQuote: true,
-  tabWidth: 2,
-  trailingComma: 'none',
-  useTabs: false,
   goTemplateBracketSpacing: true,
   overrides: [
     {
-      files: ["*.go.html"],
+      files: ['*.go.html'],
       options: {
-        parser: "go-template",
+        parser: 'go-template'
       }
     },
     {
-      files: ["*.yml"],
+      files: ['*.yml'],
       options: {
         printWidth: 160
       }
@@ -39,8 +31,16 @@ const prettierOptions = {
     'prettier-plugin-sh',
     'prettier-plugin-solidity',
     'prettier-plugin-sql'
-  ]
-};
+  ],
+  printWidth: 120,
+  quoteProps: 'as-needed',
+  requirePragma: false,
+  semi: false,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'none',
+  useTabs: false
+}
 
-
+// eslint-disable-next-line unicorn/prefer-module
 module.exports = prettierOptions
