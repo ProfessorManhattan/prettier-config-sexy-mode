@@ -24,13 +24,21 @@ const prettierOptions = {
     }
   ],
   plugins: [
+    '@prettier/plugin-php',
+    '@prettier/plugin-pug',
+    '@prettier/plugin-ruby',
     '@prettier/plugin-xml',
+    'prettier-plugin-csharp',
     'prettier-plugin-go-template',
     'prettier-plugin-ini',
+    'prettier-plugin-java',
+    'prettier-plugin-jsdoc',
     'prettier-plugin-organize-imports',
     'prettier-plugin-package-perfection',
     'prettier-plugin-properties',
-    'prettier-plugin-sh'
+    'prettier-plugin-sh',
+    'prettier-plugin-solidity',
+    'prettier-plugin-sql'
   ]
 };
 
