@@ -1,77 +1,197 @@
-# Prettier Config Documentation
+<!-- ⚠️ This README has been generated from the file(s) ".config/docs/blueprint-readme-config.md" ⚠️--><div align="center">
+  <center>
+    <a href="https://github.com/ProfessorManhattan/prettier-config-sexy-mode">
+      <img width="148" height="148" alt="Prettier Config Sexy Mode logo" src="https://gitlab.com/megabyte-labs/npm/configs/prettier-config-sexy-mode/-/raw/master/logo.png" />
+    </a>
+  </center>
+</div>
+<div align="center">
+  <center><h1 align="center"><i></i>A Prettier Config That Makes Files Sexy<i></i></h1></center>
+  <center><h4 style="color: #18c3d1;">A configuration managed by <a href="https://megabyte.space" target="_blank">Megabyte Labs</a></h4><i></i></center>
+</div>
 
-> Documentation for the `@megabytelabs/prettier-config` module.
+<div align="center">
+  <a href="https://megabyte.space" title="Megabyte Labs homepage" target="_blank">
+    <img alt="Homepage" src="https://img.shields.io/website?down_color=%23FF4136&down_message=Down&label=Homepage&logo=home-assistant&logoColor=white&up_color=%232ECC40&up_message=Up&url=https%3A%2F%2Fmegabyte.space&style=for-the-badge" />
+  </a>
+  <a href="https://github.com/ProfessorManhattan/prettier-config-sexy-mode/blob/master/docs/CONTRIBUTING.md" title="Learn about contributing" target="_blank">
+    <img alt="Contributing" src="https://img.shields.io/badge/Contributing-Guide-0074D9?logo=github-sponsors&logoColor=white&style=for-the-badge" />
+  </a>
+  <a href="https://app.slack.com/client/T01ABCG4NK1/C01NN74H0LW/details/" title="Chat with us on Slack" target="_blank">
+    <img alt="Slack" src="https://img.shields.io/badge/Slack-Chat-e01e5a?logo=slack&logoColor=white&style=for-the-badge" />
+  </a>
+  <a href="https://github.com/ProfessorManhattan/prettier-config-sexy-mode" title="GitHub mirror" target="_blank">
+    <img alt="GitHub" src="https://img.shields.io/badge/Mirror-GitHub-333333?logo=github&style=for-the-badge" />
+  </a>
+  <a href="https://gitlab.com/megabyte-labs/npm/configs/prettier-config-sexy-mode" title="GitLab repository" target="_blank">
+    <img alt="GitLab" src="https://img.shields.io/badge/Repo-GitLab-fc6d26?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAHJJREFUCNdNxKENwzAQQNEfWU1ZPUF1cxR5lYxQqQMkLEsUdIxCM7PMkMgLGB6wopxkYvAeI0xdHkqXgCLL0Beiqy2CmUIdeYs+WioqVF9C6/RlZvblRNZD8etRuKe843KKkBPw2azX13r+rdvPctEaFi4NVzAN2FhJMQAAAABJRU5ErkJggg==&style=for-the-badge" />
+  </a>
+</div>
+<br/>
+<div align="center">
+  <a href="https://www.npmjs.com/package/prettier-config-sexy-mode" title="Version 1.0.0" target="_blank">
+    <img alt="Version: 1.0.0" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAACNJREFUCNdjIACY//+BEp9hhM3hAzYQwoBIAqEDYQrCZLwAAGlFKxU1nF9cAAAAAElFTkSuQmCC&style=flat-square" />
+  </a>
+  <a href="https://gitlab.com/megabyte-labs/npm/configs/prettier-config-sexy-mode/-/commits/master" title="GitLab CI build status" target="_blank">
+    <img alt="Build status" src="https://img.shields.io/gitlab/pipeline-status/megabyte-labs/npm/config/prettier-config?branch=master&label=build&logo=gitlab&logoColor=white&style=flat-square">
+  </a>
+  <a href="https://www.npmjs.com/package/prettier-config-sexy-mode" title="Dependency status reported by Depfu" target="_blank">
+    <img alt="Dependency status reported by Depfu" src="https://img.shields.io/depfu/megabyte-labs/prettier-config-sexy-mode?logo=codeforces&logoColor=white&style=flat-square&logo=npm" />
+  </a>
+  <a href="https://www.npmjs.com/package/prettier-config-sexy-mode" title="Zip file size" target="_blank">
+    <img alt="Zip file size" src="https://img.shields.io/bundlephobia/minzip/prettier-config-sexy-mode?style=flat-square&logo=npm&logoColor=white" />
+  </a>
+  <a href="https://www.npmjs.com/package/prettier-config-sexy-mode" title="Total downloads of prettier-config-sexy-mode on npmjs.org" target="_blank">
+    <img alt="Total downloads of prettier-config-sexy-mode on npmjs.org" src="https://img.shields.io/npm/dt/prettier-config-sexy-mode?style=flat-square&logo=npm&logoColor=white" />
+  </a>
+  <a href="https://snyk.io/advisor/npm-package/prettier-config-sexy-mode" title="Number of vulnerabilities from Snyk scan on prettier-config-sexy-mode" target="_blank">
+    <img alt="Number of vulnerabilities from Snyk scan on prettier-config-sexy-mode" src="https://img.shields.io/snyk/vulnerabilities/npm/prettier-config-sexy-mode?style=flat-square&logo=snyk&logoColor=white" />
+  </a>
+  <a href="website.documentation/npm" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg?logo=readthedocs&logoColor=white&style=flat-square" />
+  </a>
+  <a href="https://github.com/ProfessorManhattan/prettier-config-sexy-mode/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-yellow.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAHpJREFUCNdjYOD/wMDAUP+PgYHxhzwDA/MB5gMM7AwMDxj4GBgKGGQYGCyAEEgbMDDwAAWAwmk8958xpIOI5zKH2RmOyhxmZjguAiKmgIgtQOIYmFgCIp4AlaQ9OczGkJYCJEAGgI0CGwo2HmwR2Eqw5SBnNIAdBHYaAJb6KLM15W/CAAAAAElFTkSuQmCC&style=flat-square" />
+  </a>
+</div>
+
+> </br><h3 align="center">**Simplifies configuring Prettier by bundling plugins and configuring them in a single shareable configuration**</h3></br>
+
+<a href="#table-of-contents" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Requirements](#requirements)
+  - [Developer Requirements](#developer-requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Plugins](#plugins)
+- [Contributing](#contributing)
+- [License](#license)
+
+<a href="#overview" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
+
+## Overview
+
+[Prettier](https://prettier.io/) is the defacto standard for formatting JavaScript, TypeScript, JSON, and YML. It rarely, if ever, causes any issues and it makes keeping your code base neater much easier. On top of that, through the use of plugins, you can also use Prettier to format PHP, Pug, Ruby, XML, Go HTML templates, `.ini` files, Java, `.properties` files, shell scripts, Solidity files, and more (listed in the [Plugins section below](#Plugins)). This configuration includes all known, well-tested Prettier plugins as well as **[prettier-plugin-package-perfection](https://github.com/ProfessorManhattan/prettier-plugin-package-perfection)** which is arguably the ultimate formatter for `package.json` files.
+
+<a href="#requirements" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
+
+## Requirements
+
+If you are simply including this library in your project, all you need is a recent version of Node.js. **[Node.js >14.18.0](repository.project.node)** is sometimes required and is the only version range we actively support. Albeit, it is highly probable that lower versions will work as well depending on the requirements that this project imports.
+
+### Developer Requirements
+
+The following versions of Node.js and Python are required for development:
+
+- **[Node.js >14.18.0](repository.project.node)**
+- **[Python >3.10.0](repository.project.python)**
+
+Other versions may work, but only the above versions are supported. Most development dependencies are installed automatically by our `Taskfile.yml` set-up (even Node.js and Python). Run `bash start.sh` to install **[Bodega](https://github.com/ProfessorManhattan/Bodega)** (an improved fork of [go-task](https://github.com/go-task/task)) and run the initialization sequence. The taskfiles will automatically install dependencies as they are needed, based on what development tasks you are running. For more information, check out the [CONTRIBUTING.md](https://github.com/ProfessorManhattan/prettier-config-sexy-mode/blob/main/docs/CONTRIBUTING.md) or simply run:
+
+```shell
+npm run help
+```
+
+`npm run help` will ensure Bodega is installed and then open an interactive dialog where you can explore and learn about various developer commands.
+
+<a href="#installation" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
+
+## Installation
+
+To install this shareable configuration, you should start by adding the project to your `devDependencies` by running:
+
+```shell
+npm install --save-dev prettier-plugin-sexy-mode
+```
+
+After that, you need to add the configuration to your `package.json` file under the `prettier` key. Your `package.json` might look something like this:
+
+```json
+{
+  "name": "mypackage",
+  "version": "1.0.4",
+  ...
+  "devDependencies": {
+    "prettier-plugin-sexy-mode": "^1.0.0"
+  },
+  "prettier": "prettier-plugin-sexy-mode"
+}
+```
+
+For more information on shareable configurations, check out [Prettier's guide](https://prettier.io/docs/en/configuration.html#sharing-configurations).
+
+<a href="#usage" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
 
 ## Usage
 
-**Yarn:**
+After installing the package, you can simply run Prettier and it will determine which plugin to use based on the file extension. This logic is mostly baked into each plugin. For example:
 
-```sh
-yarn add --dev @megabytelabs/prettier-config
+```shell
+npm install -g prettier
+prettier --list-different .
 ```
 
-**NPM**
+The command above will scan through your entire project (if run in the root of the project) and list the files that Prettier has changes for.
 
-```
-npm install --save-dev @megabytelabs/prettier-config
-```
+<a href="#plugins" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
 
-And reference it in your _.prettierrc.js_ file:
+## Plugins
 
-```js
-module.exports = require('@megabytelabs/prettier-config');
-```
+This configuration attempts to include all the best, well-known Prettier plugins that have lots of stars on GitHub. For your reference, the chart below details which plugins are included:
 
-Or you can, of course, choose your preferred way of using configs:
+| Prettier Plugin                                                                                      | Description                                                                                                                 |
+| ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| [`@prettier/plugin-php`](https://npmjs.com/package/@prettier/plugin-php)                             | This plugin adds support for the PHP language to Prettier                                                                   |
+| [`@prettier/plugin-pug`](https://npmjs.com/package/@prettier/plugin-pug)                             | This plugin adds support for the Pug language to Prettier                                                                   |
+| [`@prettier/plugin-ruby`](https://npmjs.com/package/@prettier/plugin-ruby)                           | A prettier plugin for the Ruby programming language and its ecosystem                                                       |
+| [`@prettier/plugin-xml`](https://npmjs.com/package/@prettier/plugin-xml)                             | A prettier plugin for XML                                                                                                   |
+| [`prettier-plugin-go-template`](https://npmjs.com/package/prettier-plugin-go-template)               | Fixes prettier formatting for go templates                                                                                  |
+| [`prettier-plugin-ini`](https://npmjs.com/package/prettier-plugin-ini)                               | A prettier plugin for INI files                                                                                             |
+| [`prettier-plugin-java`](https://npmjs.com/package/prettier-plugin-java)                             | This plugin allows the support of Java on Prettier                                                                          |
+| [`prettier-plugin-organize-imports`](https://npmjs.com/package/prettier-plugin-organize-imports)     | A plugin that makes Prettier organize your imports using the organizeImports feature of the TypeScript language service API |
+| [`prettier-plugin-package-perfection`](https://npmjs.com/package/prettier-plugin-package-perfection) | A plugin to sort the keys of a package.json file using prettier-package-json                                                |
+| [`prettier-plugin-properties`](https://npmjs.com/package/prettier-plugin-properties)                 | Prettier plugin for .properties files                                                                                       |
+| [`prettier-plugin-sh`](https://npmjs.com/package/prettier-plugin-sh)                                 | This plugin adds support for a lot of files through mvdan-sh                                                                |
+| [`prettier-plugin-solidity`](https://npmjs.com/package/prettier-plugin-solidity)                     | A Prettier plugin for automatically formatting your Solidity code                                                           |
+
+It might be important to note that although [@prettier/plugin-python](https://github.com/prettier/plugin-python) is popular on GitHub, we did not include it because the project's README.md suggests using [Black](https://github.com/psf/black) (a Python CLI) instead.
+
+<a href="#contributing" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ProfessorManhattan/prettier-config-sexy-mode/issues). If you would like to contribute, please take a look at the [contributing guide](https://github.com/ProfessorManhattan/prettier-config-sexy-mode/blob/master/docs/CONTRIBUTING.md).
 
 <details>
-<summary><i>package.json</i></summary>
+<summary><b>Sponsorship</b></summary>
+<br/>
+<blockquote>
+<br/>
+Dear Awesome Person,<br/><br/>
+I create open source projects out of love. Although I have a job, shelter, and as much fast food as I can handle, it would still be pretty cool to be appreciated by the community for something I have spent a lot of time and money on. Please consider sponsoring me! Who knows? Maybe I will be able to quit my job and publish open source full time.
+<br/><br/>Sincerely,<br/><br/>
 
-```json
-{
-  // ...
-  "prettier": "@megabytelabs/prettier-config"
-}
-```
+**_Brian Zalewski_**<br/><br/>
+
+</blockquote>
+
+<a title="Support us on Open Collective" href="https://opencollective.com/megabytelabs" target="_blank">
+  <img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/megabytelabs?logo=opencollective&label=OpenCollective&logoColor=white&style=for-the-badge" />
+</a>
+<a title="Support us on GitHub" href="https://github.com/ProfessorManhattan" target="_blank">
+  <img alt="GitHub sponsors" src="https://img.shields.io/github/sponsors/ProfessorManhattan?label=GitHub%20sponsors&logo=github&style=for-the-badge" />
+</a>
+<a href="https://www.patreon.com/ProfessorManhattan" title="Support us on Patreon" target="_blank">
+  <img alt="Patreon" src="https://img.shields.io/badge/Patreon-Support-052d49?logo=patreon&logoColor=white&style=for-the-badge" />
+</a>
 
 </details>
-<details>
-<summary><i>.prettierrc</i> or <i>.prettierrc.json</i></summary>
 
-```json
-{
-  "extends": ["@megabytelabs/prettier-config"]
-}
-```
+<a href="#license" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
 
-</details>
+## License
 
-_Note: If you are using `prettier` < v1.17 check [this note](#Prettier-version)._
-
-## Extending
-
-To extend the current options you will need to create a _.prettierrc.js_ and add the following:
-
-```js
-module.exports = {
-  ...require('@megabytelabs/prettier-config'),
-
-  // Add custom options bellow:
-  useTabs: true
-};
-```
-
-## Prettier version
-
-Versions of `prettier` prior to v1.17 did not feature the possibility to use a shared config via `package.json`. The way to do it is similar to when [extending](#Extending), except that you can just export the config directly:
-
-```js
-// .prettierrc.js
-
-module.exports = require('@megabytelabs/prettier-config');
-```
-
-## More
-
-- [Prettier Documentation](https://prettier.io/docs/en/index.html)
-- [README.md Source](https://github.com/strvcom/code-quality-tools/blob/master/packages/prettier-config/readme.md)
+Copyright © 2020-2021 [Megabyte LLC](https://megabyte.space). This project is [MIT](https://gitlab.com/megabyte-labs/npm/configs/prettier-config-sexy-mode/-/blob/master/LICENSE) licensed.

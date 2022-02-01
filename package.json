@@ -1,24 +1,44 @@
 {
-  "private": false,
-  "name": "@washingtondc/prettier",
-  "description": "Simplifies configuring Prettier by bundling plugins and configuring them",
-  "license": "MIT",
-  "version": "1.0.0",
-  "author": "Brian Zalewski <help@megabyte.space> (https://megabyte.space)",
-  "homepage": "https://gitlab.com/megabyte-space/npm/prettier-config",
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/megabyte-space/npm/prettier-config.git"
+  "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
+  "blueprint": {
+    "customPackageName": "prettier-config-sexy-mode",
+    "description": "Simplifies configuring Prettier by bundling plugins and configuring them in a single shareable configuration",
+    "group": "npm",
+    "name": "Prettier Config Sexy Mode",
+    "overview": "[Prettier](https://prettier.io/) is the defacto standard for formatting JavaScript, TypeScript, JSON, and YML. It rarely, if ever, causes any issues and it makes keeping your code base neater much easier. On top of that, through the use of plugins, you can also use Prettier to format PHP, Pug, Ruby, XML, Go HTML templates, `.ini` files, Java, `.properties` files, shell scripts, Solidity files, and more (listed in the [Plugins section below](#Plugins)). This configuration includes all known, well-tested Prettier plugins as well as **[prettier-plugin-package-perfection](https://github.com/ProfessorManhattan/prettier-plugin-package-perfection)** which is arguably the ultimate formatter for `package.json` files.",
+    "repository": {
+      "github": "https://github.com/ProfessorManhattan/prettier-config-sexy-mode",
+      "gitlab": "https://gitlab.com/megabyte-labs/npm/configs/prettier-config-sexy-mode"
+    },
+    "slug": "prettier-config",
+    "subgroup": "config",
+    "title": "A Prettier Config That Makes Files Sexy"
   },
   "bugs": {
     "email": "help@megabyte.space",
-    "url": "https://gitlab.com/megabyte-space/npm/prettier-config/-/issues"
+    "url": "https://gitlab.com/megabyte-labs/npm/configs/prettier-config-sexy-mode/-/issues"
   },
-  "main": "dist/main.js",
-  "files": [
-    "dist"
-  ],
-  "scripts": {},
+  "changelog": {
+    "displayTypes": [
+      "feat",
+      "fix",
+      "perf",
+      "refactor",
+      "revert"
+    ],
+    "showAuthor": true
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "helpUrl": "https://megabyte.space/docs/contributing/commits"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-emoji-conventional"
+    }
+  },
   "dependencies": {
     "@prettier/plugin-php": "^0.17.6",
     "@prettier/plugin-pug": "^1.19.2",
@@ -35,34 +55,39 @@
     "prettier-plugin-properties": "^0.1.0",
     "prettier-plugin-sh": "^0.7.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
-    "prettier-plugin-sql": "^0.4.1"
+    "prettier-plugin-sql": "^0.4.1",
+    "tslib": "^2.3.1"
   },
-  "blueprint": {
-    "customPackageName": "prettier-config-sexy-mode",
-    "group": "npm",
-    "subgroup": "config",
-    "description": "Simplifies configuring Prettier by bundling plugins and configuring them in a single shareable configuration",
-    "overview": "[Prettier](https://prettier.io/) is the defacto standard for formatting JavaScript, TypeScript, JSON, and YML. It rarely, if ever, causes any issues and it makes keeping your code base neater much easier. On top of that, through the use of plugins, you can also use Prettier to format PHP, Pug, Ruby, XML, Go HTML templates, `.ini` files, Java, `.properties` files, shell scripts, Solidity files, and more (listed in the [Plugins section below](#Plugins)). This configuration includes all known, well-tested Prettier plugins as well as **[prettier-plugin-package-perfection](https://github.com/ProfessorManhattan/prettier-plugin-package-perfection)** which is arguably the ultimate formatter for `package.json` files.",
-    "name": "Prettier Config Sexy Mode",
-    "repository": {
-      "github": "https://github.com/ProfessorManhattan/prettier-config-sexy-mode",
-      "gitlab": "https://gitlab.com/megabyte-labs/npm/configs/prettier-config-sexy-mode"
-    },
-    "slug": "prettier-config",
-    "title": "A Prettier Config That Makes Files Sexy"
+  "description": "Simplifies configuring Prettier by bundling plugins and configuring them in a single shareable configuration",
+  "devDependencies": {
+    "@megabytelabs/jest-preset": "^1.0.0",
+    "@types/node": "^16.11.6",
+    "@washingtondc/development": "^1.0.2",
+    "@washingtondc/prettier": "^1.0.0",
+    "@washingtondc/release": "^0.0.2",
+    "esbuild": "^0.12.29",
+    "esbuild-node-externals": "^1.3.0",
+    "eslint-config-strict-mode": "^1.0.28",
+    "semantic-release-config": "^0.0.12",
+    "sleekfast": "^0.0.1"
   },
-  "keywords": [
-    "autoformat",
-    "config",
-    "configuration",
-    "prettier"
-  ],
   "engines": {
-    "node": ">=10"
+    "node": ">=14.18.0"
   },
-  "publishConfig": {
-    "access": "public"
+  "eslintConfig": {
+    "extends": "eslint-config-strict-mode",
+    "rules": {
+      "import/no-extraneous-dependencies": "warn",
+      "max-len": "warn",
+      "max-lines": "warn"
+    }
   },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
   "funding": [
     {
       "type": "opencollective",
@@ -72,5 +97,124 @@
       "type": "patreon",
       "url": "https://www.patreon.com/ProfessorManhattan"
     }
-  ]
+  ],
+  "homepage": "https://megabyte.space",
+  "jest": {
+    "preset": "@megabytelabs/jest-preset",
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporters",
+        {
+          "filename": "index.html",
+          "logoImgPath": "./.config/assets/logo-jest-report.png",
+          "openReport": true,
+          "pageTitle": "Code Coverage Report",
+          "publicPath": "./coverage"
+        }
+      ]
+    ]
+  },
+  "keywords": [
+    "autoformat",
+    "config",
+    "configuration",
+    "mblabs",
+    "megabytelabs",
+    "prettier",
+    "professormanhattan",
+    "washingtondc"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "**/!(logo).(jpg|png)": [
+      "task image:compress --"
+    ],
+    "**/*": [
+      "task lint:any --"
+    ],
+    "**/*.(css|html|less|md|mjml|php|scss|sh|xml)": [
+      "task fix:prettier --"
+    ],
+    "**/*.(js|jsx|ts|tsx)": [
+      "task fix:js --",
+      "task lint:js --"
+    ],
+    "**/*.json": [
+      "task fix:json --"
+    ],
+    "**/*.sh": [
+      "task lint:shell --"
+    ],
+    "**/*.toml": [
+      "task lint:toml --"
+    ],
+    "**/*.xml": [
+      "task fix:xml --",
+      "task lint:xml --"
+    ],
+    "**/*.yml": [
+      "task fix:yaml --",
+      "task lint:yaml --"
+    ],
+    "logo.png": [
+      "task image:resize -- 200 200",
+      "task image:compress --"
+    ]
+  },
+  "main": "dist/main.js",
+  "name": "prettier-config-sexy-mode",
+  "nodemonConfig": {
+    "exec": "tsc -p . && node --inspect-brk dist/main",
+    "ext": "js,jsx,json,ts,tsx,yml",
+    "ignore": [
+      "src/**/*.spec.ts"
+    ],
+    "watch": [
+      ".env",
+      "src"
+    ]
+  },
+  "ntl": {
+    "descriptions": {
+      "help": "Display the Bodega Taskfile.yml interactive help menu",
+      "prepare": "Hook, triggered by running npm install, that runs logic such as installing pre-commit hooks",
+      "repair": "Fixes basic issues in projects that are having trouble running basic commands like 'task start'",
+      "start": "Entrypoint for new developers that installs requirements and then runs 'task start'"
+    }
+  },
+  "prettier": "@washingtondc/prettier",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "master",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ],
+    "extends": "semantic-release-config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProfessorManhattan/prettier-config-sexy-mode.git"
+  },
+  "scripts": {
+    "help": "task --list",
+    "prepare": "task common:husky",
+    "repair": "bash <(curl -sS https://install.doctor/repair)",
+    "start": "bash .config/start.sh"
+  },
+  "type": "commonjs",
+  "typings": "dist/main.d.ts",
+  "version": "1.0.0"
 }

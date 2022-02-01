@@ -64,7 +64,7 @@ tasks:
     status:
       - grep 'org.opencontainers.image.documentation' Dockerfile
 
-  # yYmllint disable rule:line-length
+  # yamllint disable rule:line-length
   # eslint-disable max-len
   labels:darwin:
     vars:
@@ -93,5 +93,6 @@ tasks:
         sed -i "s^.*org.opencontainers.image.description.*^LABEL org.opencontainers.image.description=${DESCRIPTION}^g" Dockerfile
       - sed -i "s^.*org.opencontainers.image.documentation.*^LABEL org.opencontainers.image.documentation={{.GROUP_URL}}/{{.REPOSITORY_SUBTYPE}}/{{.SLUG}}/-/blob/master/README.md\"^g" Dockerfile
       - sed -i "s^.*org.opencontainers.image.source.\*^LABEL org.opencontainers.image.source={{.GROUP_URL}}/{{.REPOSITORY_SUBTYPE}}/{{.SLUG}}.git\"^g" Dockerfile
-# yYmllint enable rule:line-length
+
+# yamllint enable rule:line-length
 # eslint-enable max-len

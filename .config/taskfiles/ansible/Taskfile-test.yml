@@ -266,7 +266,7 @@ tasks:
     cmds:
       - task: molecule:virtualbox:{{if .CLI_ARGS}}cli{{else}}prompt{{end}}
 
-  # yYmllint disable rule:truthy
+  # yamllint disable rule:truthy
   molecule:virtualbox:cli:
     deps:
       - molecule:dependencies
@@ -350,7 +350,7 @@ tasks:
       - |
         PY_COLORS=0 {{.MOLECULE_TEST_OPTIONS}} {{.PYTHON_HANDLE}}molecule test | tee '{{.MOLECULE_LOGS_PATH}}/{{.MOLECULE_DATE}}-default.txt'
 
-  # yYmllint enable rule:truthy
+  # yamllint enable rule:truthy
   molecule:virtualbox:prompt:
     interactive: true
     deps:
