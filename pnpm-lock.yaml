@@ -34,7 +34,7 @@ specifiers:
   prettier-plugin-sql: ^0.4.1
   prettier-plugin-toml-fixed: ^0.3.3
   semantic-release-config: latest
-  tslib: ^2.3.1
+  tslib: latest
   typescript: ^4.5.5
 
 dependencies:
@@ -67,7 +67,7 @@ devDependencies:
   glob: 7.2.0
   handlebars-helpers: 0.10.0
   jest-preset-ts: 1.0.1_e60b9e12c547699e6c05a619ce4dc38e
-  prettier-config-sexy-mode: 1.0.3_typescript@4.5.5
+  prettier-config-sexy-mode: 1.1.2_typescript@4.5.5
   semantic-release-config: 1.1.18
   typescript: 4.5.5
 
@@ -15266,10 +15266,9 @@ packages:
     dev: true
     optional: true
 
-  /prettier-config-sexy-mode/1.0.3_typescript@4.5.5:
-    resolution: {integrity: sha512-A4bP9Ktdxyx5c+yd6reU5zcNqieIkyNwjoAo8vfjgxa3ZWpt2eRBeqKd7ru8gcrNOCiPI57JXXFjuDEvU0lfWg==}
+  /prettier-config-sexy-mode/1.1.2_typescript@4.5.5:
+    resolution: {integrity: sha512-HvLjCpnyUNyDCFKqr3uwmLcqbYR2hG8WvMpPw2VC/R0S08h5uDDrpMaA1ZdxCBsNoLba3tQ3GXUTC5aWGj6GQg==}
     engines: {node: '>=14.18.0'}
-    deprecated: Deprecated in favor of 1.1.0
     dependencies:
       '@prettier/plugin-php': 0.17.6_prettier@2.5.1
       '@prettier/plugin-pug': 1.19.2_prettier@2.5.1
@@ -15286,7 +15285,7 @@ packages:
       prettier-plugin-sh: 0.7.1_prettier@2.5.1
       prettier-plugin-solidity: 1.0.0-beta.19_prettier@2.5.1
       prettier-plugin-sql: 0.4.1_prettier@2.5.1
-      prettier-plugin-toml: 0.3.1
+      prettier-plugin-toml-fixed: 0.3.3
       tslib: 2.3.1
     transitivePeerDependencies:
       - supports-color
@@ -15407,14 +15406,6 @@ packages:
     dependencies:
       '@toml-tools/parser': 0.3.1
       prettier: 1.19.1
-    dev: false
-
-  /prettier-plugin-toml/0.3.1:
-    resolution: {integrity: sha512-j47DEO/dN/acU1nSL/B7q4A4Z2SYJhpWPCLPkcmfAXIQC6A5GD6Ao/bi9HRHZ8ueIDOauqjuAQbnvRxLXMjazA==}
-    dependencies:
-      '@toml-tools/parser': 0.3.1
-      prettier: 1.19.1
-    dev: true
 
   /prettier/1.19.1:
     resolution: {integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==}
