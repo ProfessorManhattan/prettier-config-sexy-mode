@@ -29,8 +29,8 @@
 </div>
 <br/>
 <div align="center">
-  <a href="https://www.npmjs.com/package/prettier-config-sexy-mode" title="Version 1.0.1" target="_blank">
-    <img alt="Version: 1.0.1" src="https://img.shields.io/badge/version-1.0.1-blue.svg?cacheSeconds=2592000&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAACNJREFUCNdjIACY//+BEp9hhM3hAzYQwoBIAqEDYQrCZLwAAGlFKxU1nF9cAAAAAElFTkSuQmCC&style=flat-square" />
+  <a href="https://www.npmjs.com/package/prettier-config-sexy-mode" title="Version 1.1.0" target="_blank">
+    <img alt="Version: 1.1.0" src="https://img.shields.io/badge/version-1.1.0-blue.svg?cacheSeconds=2592000&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAACNJREFUCNdjIACY//+BEp9hhM3hAzYQwoBIAqEDYQrCZLwAAGlFKxU1nF9cAAAAAElFTkSuQmCC&style=flat-square" />
   </a>
   <a href="https://gitlab.com/megabyte-labs/npm/configs/prettier-config-sexy-mode/-/commits/master" title="GitLab CI build status" target="_blank">
     <img alt="Build status" src="https://img.shields.io/gitlab/pipeline-status/megabyte-labs/npm/config/prettier-config?branch=master&label=build&logo=gitlab&logoColor=white&style=flat-square">
@@ -159,6 +159,7 @@ This configuration attempts to include all the best, well-known Prettier plugins
 | [`prettier-plugin-sh`](https://npmjs.com/package/prettier-plugin-sh)                                 | Adds support for running Prettier on shell scripts                                                                                                                        | `*.sh`, `Dockerfile`, `.gitignore`, `.dotenv`, possibly more                                |
 | [`prettier-plugin-solidity`](https://npmjs.com/package/prettier-plugin-solidity)                     | Adds support for Solidity code                                                                                                                                            | `*.sol`                                                                                     |
 | [`prettier-plugin-sql`](https://npmjs.com/package/prettier-plugin-sql)                               | Adds support for SQL                                                                                                                                                      | `*.sql`                                                                                     |
+| [`prettier-plugin-toml`](https://npmjs.com/package/prettier-plugin-toml)                             | Adds support for TOML                                                                                                                                                     | `*.toml`                                                                                    |
 
 It might be important to note that although [@prettier/plugin-python](https://github.com/prettier/plugin-python) is popular on GitHub, we did not include it because the project's README.md suggests using [Black](https://github.com/psf/black) (a Python CLI) instead.
 
