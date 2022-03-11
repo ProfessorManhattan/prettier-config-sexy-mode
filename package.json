@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "prettier-config-sexy-mode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simplifies configuring Prettier by bundling plugins and configuring them in a single shareable configuration",
   "license": "MIT",
   "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
@@ -22,15 +22,16 @@
   ],
   "scripts": {
     "build": "task npm:build:tsconfig",
-    "help": "",
-    "prepare": "",
+    "bump": "npm run build && npm version patch --no-commit-hooks --no-git-tag-version --force && npm publish",
+    "help": "task --menu",
+    "prepare": "npm run start && (test -f Taskfile.yml && task common:husky) || true",
     "repair": "bash <(curl -sS https://install.doctor/repair)",
-    "start": "",
+    "start": "bash start.sh",
     "test": "task npm:test:none"
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-emoji-conventional"
+      "path": "node_modules/git-cz-emoji"
     }
   },
   "typings": "dist/main.d.ts",
@@ -40,7 +41,6 @@
     "@prettier/plugin-ruby": "^2.0.0",
     "@prettier/plugin-xml": "^1.0.2",
     "prettier": "^2.4.1",
-    "prettier-plugin-csharp": "^0.6.0-development",
     "prettier-plugin-go-template": "^0.0.11",
     "prettier-plugin-ini": "^0.3.1",
     "prettier-plugin-java": "^1.6.1",
@@ -51,20 +51,23 @@
     "prettier-plugin-sh": "^0.7.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
     "prettier-plugin-sql": "^0.4.1",
+    "prettier-plugin-toml": "^0.3.1",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@megabytelabs/jest-preset": "^1.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@types/node": "^16.11.6",
-    "@washingtondc/development": "^1.0.2",
-    "@washingtondc/prettier": "^1.0.0",
-    "@washingtondc/release": "^0.0.2",
+    "@washingtondc/development": "latest",
     "esbuild": "^0.12.29",
     "esbuild-node-externals": "^1.3.0",
-    "eslint-config-strict-mode": "^1.0.28",
-    "jest-preset-ts": "^1.0.0",
-    "semantic-release-config": "^0.0.12",
-    "sleekfast": "^0.0.1"
+    "eslint-config-strict-mode": "latest",
+    "git-cz-emoji": "latest",
+    "glob": "^7.2.0",
+    "handlebars-helpers": "^0.10.0",
+    "jest-preset-ts": "latest",
+    "prettier-config-sexy-mode": "latest",
+    "semantic-release-config": "latest",
+    "typescript": "^4.5.5"
   },
   "keywords": [
     "autoformat",
@@ -80,13 +83,14 @@
     "node": ">=14.18.0"
   },
   "publishConfig": {
+    "@megabyte:registry": "https://gitlab.com/api/v4/projects/33309505/packages/npm/",
     "access": "public"
   },
   "blueprint": {
     "customPackageName": "prettier-config-sexy-mode",
     "description": "Simplifies configuring Prettier by bundling plugins and configuring them in a single shareable configuration",
     "github_id": "R_kgDOGxQZ7A",
-    "gitlab_group_id": "",
+    "gitlab_group_id": "12165875",
     "gitlab_project_id": "33309505",
     "group": "npm",
     "name": "Prettier Config Sexy Mode",
@@ -150,35 +154,66 @@
     ]
   },
   "lint-staged": {
+    "(Brewfile|composer.lock|Gemfile|Gopkg.lock|Pipfile.lock)": [
+      "task fix:prettier --"
+    ],
     "**/!(logo).(jpg|png)": [
       "task image:compress --"
     ],
     "**/*": [
       "task lint:any --"
     ],
-    "**/*.(css|html|less|md|mjml|php|scss|sh|xml)": [
+    "**/*!(template).(json|webapp|webmanifest)": [
+      "task fix:json --"
+    ],
+    "**/*.(bash|cfg|cgi|command|css|env|env.*|handlebars|hbs|html|less|fcgi|java|md|mdx|mjml|php|phtml|properties|reg|scss|tmpl|tmux|tool|tpl|zsh)": [
       "task fix:prettier --"
     ],
-    "**/*.(js|jsx|ts|tsx)": [
+    "**/*.(cjs|js|jsx|mjs|ts|tsx)": [
       "task fix:js --",
       "task lint:js --"
     ],
-    "**/*.json": [
-      "task fix:json --"
+    "**/*.(yml|yaml)": [
+      "task fix:yaml --",
+      "task lint:yaml --"
+    ],
+    "**/*.go": [
+      "task fix:go --",
+      "task lint:go --"
+    ],
+    "**/*.md": [
+      "task fix:markdown --",
+      "task lint:spelling:markdown --"
+    ],
+    "**/*.php": [
+      "task fix:php --",
+      "task lint:php --"
+    ],
+    "**/*.py": [
+      "task fix:python --",
+      "task lint:python --"
     ],
     "**/*.sh": [
+      "task fix:prettier --",
+      "task fix:shell --",
       "task lint:shell --"
     ],
     "**/*.toml": [
+      "task fix:toml --",
+      "task fix:prettier --",
       "task lint:toml --"
     ],
     "**/*.xml": [
       "task fix:xml --",
       "task lint:xml --"
     ],
-    "**/*.yml": [
-      "task fix:yaml --",
-      "task lint:yaml --"
+    "Dockerfile": [
+      "task fix:prettier --",
+      "task lint:docker --"
+    ],
+    "Vagrantfile": [
+      "task fix:prettier --",
+      "task lint:vagrant"
     ],
     "logo.png": [
       "task image:resize -- 200 200",
@@ -198,13 +233,33 @@
   },
   "ntl": {
     "descriptions": {
+      "build": "Builds the project using the build command specified under scripts in package.json",
+      "bump": "Used to quickly build, increase the package.json version, and publish the package",
       "help": "Display the Bodega Taskfile.yml interactive help menu",
-      "prepare": "Hook, triggered by running npm install, that runs logic such as installing pre-commit hooks",
+      "prepare": "A hook triggered by running npm install that runs logic such as installing pre-commit hooks",
       "repair": "Fixes basic issues in projects that are having trouble running basic commands like 'task start'",
-      "start": "Entrypoint for new developers that installs requirements and then runs 'task start'"
+      "start": "Entrypoint for new developers that installs requirements and then runs 'task start'",
+      "test": "Runs the appropriate test logic by running the test command defined under scripts in package.json"
     }
   },
-  "prettier": "@washingtondc/prettier",
+  "pnpm": {
+    "allowedVersions": {
+      "@typescript-eslint/eslint-plugin": "5",
+      "typescript": "4"
+    },
+    "neverBuiltDependencies": [
+      "core-js",
+      "core-js-pure",
+      "highlight.js"
+    ],
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "eslint",
+        "prettier"
+      ]
+    }
+  },
+  "prettier": "prettier-config-sexy-mode",
   "release": {
     "branches": [
       "main",

@@ -20,7 +20,6 @@ const prettierOptions = {
     '@prettier/plugin-pug',
     '@prettier/plugin-ruby',
     '@prettier/plugin-xml',
-    'prettier-plugin-csharp',
     'prettier-plugin-go-template',
     'prettier-plugin-ini',
     'prettier-plugin-java',
@@ -30,7 +29,8 @@ const prettierOptions = {
     'prettier-plugin-properties',
     'prettier-plugin-sh',
     'prettier-plugin-solidity',
-    'prettier-plugin-sql'
+    'prettier-plugin-sql',
+    'prettier-plugin-toml'
   ],
   printWidth: 120,
   quoteProps: 'as-needed',

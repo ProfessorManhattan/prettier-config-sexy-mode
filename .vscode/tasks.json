@@ -52,7 +52,7 @@
       "command": "bash .config/scripts/start.sh && task ansible:test:vagrant"
     },
     {
-      "label": "(build): Build the project",
+      "label": "(build): Build the project using the build script defined in `package.json`",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task build"
     },
@@ -62,14 +62,19 @@
       "command": "bash .config/scripts/start.sh && task ci:github:actions:test"
     },
     {
-      "label": "(commit): Add all and commit",
+      "label": "(clean): Removes optional folders that are cached during various tasks",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task clean"
+    },
+    {
+      "label": "(commit): Lint staged files, report spelling errors, and open a _required_ commit dialoge",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task commit"
     },
     {
-      "label": "(common:clean): Removes optional folders that are cached during various tasks",
+      "label": "(commit:all): Add all the untracked changes and commit the code",
       "type": "shell",
-      "command": "bash .config/scripts/start.sh && task common:clean"
+      "command": "bash .config/scripts/start.sh && task commit:all"
     },
     {
       "label": "(common:code:count): Display a chart detailing the lines of code for each language used",
@@ -82,37 +87,12 @@
       "command": "bash .config/scripts/start.sh && task common:code:find:todo"
     },
     {
-      "label": "(common:commit): Lint staged files, report spelling errors, and open a _required_ commit dialoge",
-      "type": "shell",
-      "command": "bash .config/scripts/start.sh && task common:commit"
-    },
-    {
-      "label": "(common:prepare-release): Ensure the project has upstream changes, lint, and then update the version",
-      "type": "shell",
-      "command": "bash .config/scripts/start.sh && task common:prepare-release"
-    },
-    {
-      "label": "(common:requirements): Ensure all the dependencies are installed (Node.js, Python, etc.)",
-      "type": "shell",
-      "command": "bash .config/scripts/start.sh && task common:requirements"
-    },
-    {
-      "label": "(common:reset): Resets the project by removing all caches and updating the project",
-      "type": "shell",
-      "command": "bash .config/scripts/start.sh && task common:reset"
-    },
-    {
-      "label": "(common:reset-force): Aggressively reset the project (**WARNING** This will wipe uncommitted work)",
-      "type": "shell",
-      "command": "bash .config/scripts/start.sh && task common:reset-force"
-    },
-    {
       "label": "(docker:build): Build a regular Docker image and then generate a slim build from it",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task docker:build"
     },
     {
-      "label": "(docker:build:fat): Build a Docker container from the Dockerfile",
+      "label": "(docker:build:fat): Build a normal Docker container from the Dockerfile",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task docker:build:fat"
     },
@@ -122,34 +102,69 @@
       "command": "bash .config/scripts/start.sh && task docker:build:slim"
     },
     {
+      "label": "(docker:publish): Publish the Docker images (using `Docker*.test.yml` files)",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task docker:publish"
+    },
+    {
+      "label": "(docker:shell): Open the terminal of an existing Docker image",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task docker:shell"
+    },
+    {
+      "label": "(docker:test): Perform all available tests on the Docker image",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task docker:test"
+    },
+    {
       "label": "(docker:test:container-structure-test): Runs ContainerStructureTest for Dockerfile build",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task docker:test:container-structure-test"
     },
     {
-      "label": "(fix): Run code auto-fixers",
+      "label": "(docker:test:output): For each project in the `test-output/` folder, ensure slim and latest output match with default command",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task docker:test:output"
+    },
+    {
+      "label": "(fix): Run code auto-fixers / auto-formatters",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task fix"
     },
     {
-      "label": "(fix:eslint): Fix JavaScript/TypeScript errors automatically",
+      "label": "(fix:eslint): Fix ESLint errors automatically",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task fix:eslint"
     },
     {
-      "label": "(fix:json): Alphabetically sort JSON",
+      "label": "(fix:eslint:staged): Auto-fix only modified files with ESLint",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task fix:eslint:staged"
+    },
+    {
+      "label": "(fix:go): Fix Go with all available Go fixers",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task fix:go"
+    },
+    {
+      "label": "(fix:json): Format and sort JSON",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task fix:json"
     },
     {
-      "label": "(fix:misc): Perform miscellaneous fixes such as removing BOM and ensuring LF line endings",
+      "label": "(fix:markdown): Auto-fixes markdown files",
       "type": "shell",
-      "command": "bash .config/scripts/start.sh && task fix:misc"
+      "command": "bash .config/scripts/start.sh && task fix:markdown"
     },
     {
       "label": "(fix:packer): Automatically fix and format Packer templates",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task fix:packer"
+    },
+    {
+      "label": "(fix:php): Fix PHP with all available PHP auto-fixers",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task fix:php"
     },
     {
       "label": "(fix:prettier): Automatically format most files using Prettier",
@@ -162,27 +177,32 @@
       "command": "bash .config/scripts/start.sh && task fix:python"
     },
     {
-      "label": "(fix:shellcheck): (Experimental) Automatically apply fixes to .sh and .sh.j2 files using Shellcheck",
+      "label": "(fix:shellcheck): Automatically apply fixes to `.sh` and `.sh.j2` files using Shellcheck",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task fix:shellcheck"
     },
     {
-      "label": "(fix:xml): Autofix XML files",
+      "label": "(fix:spelling:markdown): Auto-fix spelling errors in markdown files using `misspell`",
       "type": "shell",
-      "command": "bash .config/scripts/start.sh && task fix:xml"
+      "command": "bash .config/scripts/start.sh && task fix:spelling:markdown"
     },
     {
-      "label": "(fix:yaml): Autofix YML files",
+      "label": "(fix:toml): Format `.toml` files by alphabetizing and flattening",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task fix:toml"
+    },
+    {
+      "label": "(fix:yaml): Auto-format and sort YML files",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task fix:yaml"
     },
     {
-      "label": "(git:gitlab:group:exec): Execute a shell script across all repositories in a group and commit the changes",
+      "label": "(get:links): Log useful links such as the current",
       "type": "shell",
-      "command": "bash .config/scripts/start.sh && task git:gitlab:group:exec"
+      "command": "bash .config/scripts/start.sh && task get:links"
     },
     {
-      "label": "(git:remotes): Configure the git remote `origin` to point to GitLab and the git remote `all` to point to GitLab and GitHub",
+      "label": "(git:remotes): Configure the the `origin`, `gitlab`, `github`, and `all` git remotes",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task git:remotes"
     },
@@ -212,7 +232,7 @@
       "command": "bash .config/scripts/start.sh && task init"
     },
     {
-      "label": "(lint): Lints the project using all error-prone linters",
+      "label": "(lint): Lints the project using all linters",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task lint"
     },
@@ -227,27 +247,42 @@
       "command": "bash .config/scripts/start.sh && task lint:any"
     },
     {
+      "label": "(lint:codeclimate): Run CodeClimate with all available linters",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task lint:codeclimate"
+    },
+    {
       "label": "(lint:docker): Lint Dockerfiles using Hadolint (requires Docker)",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task lint:docker"
     },
     {
-      "label": "(lint:eslint): Lint with `eslint`",
+      "label": "(lint:dockerfilelint): Lint a Dockerfile with `dockerfilelint`",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task lint:dockerfilelint"
+    },
+    {
+      "label": "(lint:eslint): Lint with ESLint",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task lint:eslint"
     },
     {
-      "label": "(lint:eslint:warn-all): Convert ESLint errors into warnings in `package.json`",
+      "label": "(lint:eslint:staged): Lint only modified files with ESLint",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task lint:eslint:staged"
+    },
+    {
+      "label": "(lint:eslint:warn-all): Convert ESLint errors into warnings by saving the modified configuration inside `package.json`",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task lint:eslint:warn-all"
     },
     {
-      "label": "(lint:esprint:esprint:stop): Stop the `esprint` process that is currently running",
+      "label": "(lint:go): Lint Go with all available Go linters",
       "type": "shell",
-      "command": "bash .config/scripts/start.sh && task lint:esprint:esprint:stop"
+      "command": "bash .config/scripts/start.sh && task lint:go"
     },
     {
-      "label": "(lint:markdown:markdown): Lint markdown files",
+      "label": "(lint:markdown:markdown): Lint markdown files with `remark`",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task lint:markdown:markdown"
     },
@@ -262,12 +297,17 @@
       "command": "bash .config/scripts/start.sh && task lint:packer"
     },
     {
+      "label": "(lint:php): Lint PHP with all available PHP linters",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task lint:php"
+    },
+    {
       "label": "(lint:prettier): Lint formatting using Prettier",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task lint:prettier"
     },
     {
-      "label": "(lint:prose:prose): Lint for English prose",
+      "label": "(lint:prose:prose): Lint text/markdown for English prose with `proselint`",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task lint:prose:prose"
     },
@@ -287,9 +327,9 @@
       "command": "bash .config/scripts/start.sh && task lint:spelling"
     },
     {
-      "label": "(lint:toml): Lint TOML files",
+      "label": "(lint:spelling:markdown): Run `misspell` (a spell-checker) on all markdown files",
       "type": "shell",
-      "command": "bash .config/scripts/start.sh && task lint:toml"
+      "command": "bash .config/scripts/start.sh && task lint:spelling:markdown"
     },
     {
       "label": "(lint:vagrant): Validate the Vagrantfile",
@@ -297,12 +337,7 @@
       "command": "bash .config/scripts/start.sh && task lint:vagrant"
     },
     {
-      "label": "(lint:xml): Lint XML files",
-      "type": "shell",
-      "command": "bash .config/scripts/start.sh && task lint:xml"
-    },
-    {
-      "label": "(lint:yaml): Lint .yml files using YAML Lint",
+      "label": "(lint:yaml): Lint `.yml` files using YAML Lint",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task lint:yaml"
     },
@@ -327,12 +362,12 @@
       "command": "bash .config/scripts/start.sh && task npm:clean"
     },
     {
-      "label": "(npm:cov:open): Ensures the code coverage report is generated and opens it in a browser",
+      "label": "(npm:cov:open): View the code coverage report in the browser",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task npm:cov:open"
     },
     {
-      "label": "(npm:cov:upload): Uploads code coverage report to `codecov.io`",
+      "label": "(npm:cov:upload): Upload code coverage report to `codecov.io`",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task npm:cov:upload"
     },
@@ -402,9 +437,9 @@
       "command": "bash .config/scripts/start.sh && task npm:typesync"
     },
     {
-      "label": "(packer:build:all): Build Packer images for all platforms (default setting uses `template.json`)",
+      "label": "(packer:build): Build Packer images for all available platforms",
       "type": "shell",
-      "command": "bash .config/scripts/start.sh && task packer:build:all"
+      "command": "bash .config/scripts/start.sh && task packer:build"
     },
     {
       "label": "(packer:build:kvm): Build a Packer image for KVM",
@@ -427,6 +462,11 @@
       "command": "bash .config/scripts/start.sh && task packer:build:vmware"
     },
     {
+      "label": "(packer:install:platforms): Install all available virtualization providers",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task packer:install:platforms"
+    },
+    {
       "label": "(preload): Set up your workstation in advance by installing commonly used programs",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task preload"
@@ -435,6 +475,11 @@
       "label": "(prepare): Prepares the project for the normal start command",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task prepare"
+    },
+    {
+      "label": "(publish): Publish a semantic release via `semantic-release`",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task publish"
     },
     {
       "label": "(publish:android:beta): Publishes Android app to Firebase beta channel",
@@ -470,6 +515,11 @@
       "label": "(publish:chrome:release): Publishes Chrome extension",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task publish:chrome:release"
+    },
+    {
+      "label": "(publish:force): Force a `semantic-release` even if there are no new eligible commits",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task publish:force"
     },
     {
       "label": "(publish:ios:beta): Publishes iOS app to Firebase beta channel",
@@ -515,6 +565,16 @@
       "label": "(python:test): Runs tests with `pytest` after fixing and linting",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task python:test"
+    },
+    {
+      "label": "(reset): Resets the project by removing all caches and then re-generating templated files",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task reset"
+    },
+    {
+      "label": "(reset:force): Aggressively reset the project (**WARNING** This will wipe uncommitted work)",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task reset:force"
     },
     {
       "label": "(scripts): Run and view descriptions for `npm scripts` via an interactive dialog",
@@ -585,6 +645,11 @@
       "label": "(test): Open an interactive dialog to select and run a Molecule test",
       "type": "shell",
       "command": "bash .config/scripts/start.sh && task test"
+    },
+    {
+      "label": "(vagrant:up): Select which virtualization platform to run the image on using an interactive prompt",
+      "type": "shell",
+      "command": "bash .config/scripts/start.sh && task vagrant:up"
     }
   ]
 }
