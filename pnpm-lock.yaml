@@ -1,3 +1,4 @@
+---
 lockfileVersion: 5.3
 
 neverBuiltDependencies:
@@ -13,8 +14,6 @@ specifiers:
   '@prettier/plugin-xml': ^1.0.2
   '@types/node': ^16.11.6
   '@washingtondc/development': latest
-  esbuild: ^0.12.29
-  esbuild-node-externals: ^1.3.0
   eslint-config-strict-mode: latest
   git-cz-emoji: latest
   glob: ^7.2.0
@@ -60,14 +59,12 @@ devDependencies:
   '@commitlint/config-conventional': 16.2.1
   '@types/node': 16.11.21
   '@washingtondc/development': 1.0.10_06de4b00c69b73d094e2c5b522a6ad57
-  esbuild: 0.12.29
-  esbuild-node-externals: 1.4.1_esbuild@0.12.29
   eslint-config-strict-mode: 1.0.47_prettier@2.5.1+typescript@4.5.5
   git-cz-emoji: 1.1.24_@types+node@16.11.21
   glob: 7.2.0
   handlebars-helpers: 0.10.0
-  jest-preset-ts: 1.0.1_e60b9e12c547699e6c05a619ce4dc38e
-  prettier-config-sexy-mode: 1.0.1_typescript@4.5.5
+  jest-preset-ts: 1.0.1_prettier@2.5.1+typescript@4.5.5
+  prettier-config-sexy-mode: 1.0.3_typescript@4.5.5
   semantic-release-config: 1.1.18_@types+node@16.11.21
   typescript: 4.5.5
 
@@ -3119,7 +3116,7 @@ packages:
       glob: 7.2.0
       global: 4.4.0
       jest: 27.4.7
-      jest-preset-angular: 10.1.0_a2eeb96e7b5678498ab4351624656cb3
+      jest-preset-angular: 10.1.0_jest@27.4.7+typescript@4.5.5
       jest-specific-snapshot: 4.0.0_jest@27.4.7
       preact-render-to-string: 5.1.19
       pretty-format: 26.6.2
@@ -3899,14 +3896,12 @@ packages:
     resolution: {integrity: sha512-CCKHQb5OWpgFu47MQ2rcql4AnE9GaehNk/c1oJOyOBovED6XmdzQPXsvPSu+NJ9lToqJNoX+nLXQsB8WyQGdzQ==}
     dependencies:
       chevrotain: 4.1.1
-    dev: false
 
   /@toml-tools/parser/0.3.1:
     resolution: {integrity: sha512-vadwVx5TkgByt19dbp/rfIUKPkDdn5werANYvziiGK9wHlqPA0BWnvOloQw/dPDxF31+Ag0+zarXJpPDdRsPPg==}
     dependencies:
       '@toml-tools/lexer': 0.3.1
       chevrotain: 4.1.1
-    dev: false
 
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
@@ -6327,7 +6322,6 @@ packages:
     resolution: {integrity: sha512-NQky1HQyiAzxsxpq4Ppt47SYO2U3JLtmfs85QPf3kYSzGBjjp5AA8kqjH8hCjGFRpaQ781QOk1ragQIOkBgUTA==}
     dependencies:
       regexp-to-ast: 0.3.5
-    dev: false
 
   /chevrotain/6.5.0:
     resolution: {integrity: sha512-BwqQ/AgmKJ8jcMEjaSnfMybnKMgGTrtDKowfTP3pX4jwVy0kNjRsT/AP6h+wC3+3NC+X8X15VWBnTCQlX+wQFg==}
@@ -6682,27 +6676,6 @@ packages:
   /comment-parser/1.3.0:
     resolution: {integrity: sha512-hRpmWIKgzd81vn0ydoWoyPoALEOnF4wt8yKD35Ib1D6XC2siLiYaiqfGkYrunuKdsXGwpBpHU3+9r+RVw2NZfA==}
     engines: {node: '>= 12.0.0'}
-
-  /commitizen/4.2.4:
-    resolution: {integrity: sha512-LlZChbDzg3Ir3O2S7jSo/cgWp5/QwylQVr59K4xayVq8S4/RdKzSyJkghAiZZHfhh5t4pxunUoyeg0ml1q/7aw==}
-    engines: {node: '>= 10'}
-    hasBin: true
-    dependencies:
-      cachedir: 2.2.0
-      cz-conventional-changelog: 3.2.0_@types+node@16.11.21
-      dedent: 0.7.0
-      detect-indent: 6.0.0
-      find-node-modules: 2.1.2
-      find-root: 1.1.0
-      fs-extra: 8.1.0
-      glob: 7.1.4
-      inquirer: 6.5.2
-      is-utf8: 0.2.1
-      lodash: 4.17.21
-      minimist: 1.2.5
-      strip-bom: 4.0.0
-      strip-json-comments: 3.0.1
-    dev: true
 
   /commitizen/4.2.4_@types+node@16.11.21:
     resolution: {integrity: sha512-LlZChbDzg3Ir3O2S7jSo/cgWp5/QwylQVr59K4xayVq8S4/RdKzSyJkghAiZZHfhh5t4pxunUoyeg0ml1q/7aw==}
@@ -7327,7 +7300,7 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.2.4
+      commitizen: 4.2.4_@types+node@16.11.21
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
@@ -8041,22 +8014,6 @@ packages:
 
   /es6-shim/0.35.6:
     resolution: {integrity: sha512-EmTr31wppcaIAgblChZiuN/l9Y7DPyw8Xtbg7fIVngn6zMW+IEBJDJngeKC3x6wr0V/vcA2wqeFnaw1bFJbDdA==}
-    dev: true
-
-  /esbuild-node-externals/1.4.1_esbuild@0.12.29:
-    resolution: {integrity: sha512-ZFNGa6w1kYzn4wx9ty4eaItaOTSe2hWQZ6WXa/8guKJCiXL3XpW2CZT4gkx2OhfBKxpqaqa7ZeGK54ScoLSUdw==}
-    peerDependencies:
-      esbuild: 0.12 - 0.14
-    dependencies:
-      esbuild: 0.12.29
-      find-up: 5.0.0
-      tslib: 2.3.1
-    dev: true
-
-  /esbuild/0.12.29:
-    resolution: {integrity: sha512-w/XuoBCSwepyiZtIRsKsetiLDUVGPVw1E/R3VTFSecIy8UR7Cq3SOtwKHJMFoVqqVG36aGkzh4e8BvpO1Fdc7g==}
-    hasBin: true
-    requiresBuild: true
     dev: true
 
   /escalade/3.1.1:
@@ -12210,7 +12167,7 @@ packages:
       jest-resolve: 27.4.6
     dev: true
 
-  /jest-preset-angular/10.1.0_a2eeb96e7b5678498ab4351624656cb3:
+  /jest-preset-angular/10.1.0_jest@27.4.7+typescript@4.5.5:
     resolution: {integrity: sha512-D4k+BnGoig3w1x4MZiQOdN8UfaLN5aNjmx91U28VYRA+LslbN+D8dGyb5a5lR32mog5y86iVnAZ4mRvFlYr7SQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=15.0.0}
     peerDependencies:
@@ -12220,7 +12177,7 @@ packages:
     dependencies:
       jest-environment-jsdom: 27.4.6
       pretty-format: 27.4.6
-      ts-jest: 27.1.3_a2eeb96e7b5678498ab4351624656cb3
+      ts-jest: 27.1.3_jest@27.4.7+typescript@4.5.5
     transitivePeerDependencies:
       - '@babel/core'
       - '@types/jest'
@@ -12234,7 +12191,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /jest-preset-ts/1.0.1_e60b9e12c547699e6c05a619ce4dc38e:
+  /jest-preset-ts/1.0.1_prettier@2.5.1+typescript@4.5.5:
     resolution: {integrity: sha512-e2WUxVG+iIrLdPX8hnR1yFd1zRXmCDcPyeHM6tnXlH/pnB7YB0pUg6bGHJ8qT+MYA3mCuEAPded/idHPBYjrHA==}
     engines: {node: '>=14.18.0'}
     peerDependencies:
@@ -12252,7 +12209,7 @@ packages:
       jest-image-snapshot: 4.5.1_jest@27.4.7
       jest-json-schema: 5.0.0
       jest-junit: 13.0.0
-      jest-preset-angular: 10.1.0_a2eeb96e7b5678498ab4351624656cb3
+      jest-preset-angular: 10.1.0_jest@27.4.7+typescript@4.5.5
       jest-puppeteer: 6.0.3
       jest-runner-eslint: 1.0.0_jest@27.4.7
       jest-runner-groups: 2.1.0
@@ -12262,7 +12219,7 @@ packages:
       jest-watch-master: 1.0.0_jest@27.4.7
       jest-watch-select-projects: 2.0.0
       jest-watch-typeahead: 1.0.0_jest@27.4.7
-      ts-jest: 27.1.3_a2eeb96e7b5678498ab4351624656cb3
+      ts-jest: 27.1.3_jest@27.4.7+typescript@4.5.5
       tslib: 2.3.1
       typescript: 4.5.5
     transitivePeerDependencies:
@@ -15450,8 +15407,8 @@ packages:
     dev: true
     optional: true
 
-  /prettier-config-sexy-mode/1.0.1_typescript@4.5.5:
-    resolution: {integrity: sha512-6ZdAv6LW2vq++c5fqoh2MWrIZk9fi67o608xizEPYKPMjGUNDsqjJ/pYiJLp7yDHgGerEERc4bRQqlh8a9W6YA==}
+  /prettier-config-sexy-mode/1.0.3_typescript@4.5.5:
+    resolution: {integrity: sha512-A4bP9Ktdxyx5c+yd6reU5zcNqieIkyNwjoAo8vfjgxa3ZWpt2eRBeqKd7ru8gcrNOCiPI57JXXFjuDEvU0lfWg==}
     engines: {node: '>=14.18.0'}
     dependencies:
       '@prettier/plugin-php': 0.17.6_prettier@2.5.1
@@ -15469,6 +15426,7 @@ packages:
       prettier-plugin-sh: 0.7.1_prettier@2.5.1
       prettier-plugin-solidity: 1.0.0-beta.19_prettier@2.5.1
       prettier-plugin-sql: 0.4.1_prettier@2.5.1
+      prettier-plugin-toml: 0.3.1
       tslib: 2.3.1
     transitivePeerDependencies:
       - supports-color
@@ -15589,7 +15547,6 @@ packages:
     dependencies:
       '@toml-tools/parser': 0.3.1
       prettier: 1.19.1
-    dev: false
 
   /prettier/1.19.1:
     resolution: {integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==}
@@ -16251,7 +16208,6 @@ packages:
 
   /regexp-to-ast/0.3.5:
     resolution: {integrity: sha512-1CJygtdvsfNFwiyjaMLBWtg2tfEqx/jSZ8S6TV+GlNL8kiH8rb4cm5Pb7A/C2BpyM/fA8ZJEudlCwi/jvAY+Ow==}
-    dev: false
 
   /regexp-to-ast/0.4.0:
     resolution: {integrity: sha512-4qf/7IsIKfSNHQXSwial1IFmfM1Cc/whNBQqRwe0V2stPe7KmN1U0tWQiIx6JiirgSrisjE0eECdNf7Tav1Ntw==}
@@ -18141,7 +18097,7 @@ packages:
     engines: {node: '>=6.10'}
     dev: true
 
-  /ts-jest/27.1.3_a2eeb96e7b5678498ab4351624656cb3:
+  /ts-jest/27.1.3_jest@27.4.7+typescript@4.5.5:
     resolution: {integrity: sha512-6Nlura7s6uM9BVUAoqLH7JHyMXjz8gluryjpPXxr3IxZdAXnU6FhjvVLHFtfd1vsE1p8zD1OJfskkc0jhTSnkA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
@@ -18163,7 +18119,6 @@ packages:
         optional: true
     dependencies:
       bs-logger: 0.2.6
-      esbuild: 0.12.29
       fast-json-stable-stringify: 2.1.0
       jest: 27.4.7
       jest-util: 27.4.2
