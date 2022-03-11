@@ -30,7 +30,7 @@ const prettierOptions = {
     'prettier-plugin-sh',
     'prettier-plugin-solidity',
     'prettier-plugin-sql',
-    'prettier-plugin-toml'
+    'prettier-plugin-toml-fixed'
   ],
   printWidth: 120,
   quoteProps: 'as-needed',
