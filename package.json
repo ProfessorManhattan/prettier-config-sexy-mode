@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "prettier-config-sexy-mode",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Simplifies configuring Prettier by bundling plugins and configuring them in a single shareable configuration",
   "license": "MIT",
   "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
@@ -21,19 +21,21 @@
     "lib"
   ],
   "scripts": {
-    "build": "task npm:build:tsconfig",
-    "bump": "npm run build && npm version patch --no-commit-hooks --no-git-tag-version --force && npm publish",
-    "commit": "task commit",
-    "fix": "task fix",
-    "help": "task --menu",
-    "lint": "task list",
-    "preload": "task preload",
-    "prepare": "npm run start && (test -f Taskfile.yml && task common:husky) || true",
-    "release": "task publish:semantic-release",
+    "build": "bash start.sh && task npm:build:tsconfig",
+    "bump": "npm run build && SKIP_NPM_PREPUBLISHONLY=true npm version patch --no-commit-hooks --no-git-tag-version --force && SKIP_NPM_PREPUBLISHONLY=true npm publish",
+    "commit": "bash start.sh && task commit",
+    "fix": "bash start.sh && task fix",
+    "help": "bash start.sh && task --menu",
+    "lint": "bash start.sh && task list",
+    "preload": "bash start.sh && task preload",
+    "prepare": "bash start.sh && (test -f Taskfile.yml && task npm:prepare) || true",
+    "prepublishOnly": "test -z SKIP_NPM_PREPUBLISHONLY && bash start.sh && task npm:bundle:create || true",
+    "release": "bash start.sh && task publish:semantic-release",
     "repair": "bash <(curl -sS https://install.doctor/repair)",
-    "start": "bash start.sh",
-    "test": "task npm:test:none",
-    "update": "task update"
+    "start": "test -z SKIP_NPM_START && bash start.sh || true",
+    "test": "bash start.sh && task npm:test:none",
+    "unpack": "bash start.sh && task npm:bundle:unpack",
+    "update": "bash start.sh && task update"
   },
   "config": {
     "commitizen": {
@@ -46,7 +48,6 @@
     "@prettier/plugin-pug": "^1.19.2",
     "@prettier/plugin-ruby": "^2.0.0",
     "@prettier/plugin-xml": "^1.0.2",
-    "prettier": "^2.4.1",
     "prettier-plugin-go-template": "^0.0.11",
     "prettier-plugin-ini": "^0.3.1",
     "prettier-plugin-java": "^1.6.1",
@@ -57,24 +58,24 @@
     "prettier-plugin-sh": "^0.7.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
     "prettier-plugin-sql": "^0.4.1",
-    "prettier-plugin-toml-fixed": "^0.3.3",
     "tslib": "latest"
+  },
+  "peerDependencies": {
+    "prettier": "^2.4.1"
   },
   "optionalDependencies": {},
   "devDependencies": {
-    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/config-conventional": "latest",
     "@types/node": "^16.11.6",
-    "@washingtondc/development": "latest",
     "esbuild": "^0.12.29",
     "esbuild-node-externals": "^1.3.0",
     "eslint-config-strict-mode": "latest",
     "git-cz-emoji": "latest",
-    "glob": "^7.2.0",
-    "handlebars-helpers": "^0.10.0",
+    "handlebars-helpers": "latest",
     "jest-preset-ts": "latest",
     "prettier-config-sexy-mode": "latest",
     "semantic-release-config": "latest",
-    "typescript": "^4.5.5"
+    "typescript": "latest"
   },
   "keywords": [
     "autoformat",
@@ -247,6 +248,7 @@
       "repair": "Fixes basic issues in projects that are having trouble running basic commands like 'task start'",
       "start": "Entrypoint for new developers that installs requirements and then runs 'task start'",
       "test": "Runs the appropriate test logic by running the test command defined under scripts in package.json",
+      "unpack": "Populates production node_modules from compressed copies saved in the .modules/ folder",
       "update": "Update and refresh the repository with upstream changes and templated parts"
     }
   },
