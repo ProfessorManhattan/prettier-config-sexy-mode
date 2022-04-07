@@ -240,14 +240,26 @@ tasks:
 
   prepare:
     cmds:
+      - task: prepare:project
+      - task: prepare:release
+
+  prepare:project:
+    cmds:
       - task: :common:husky
-      - task: prepare:prune
+    status:
+      - '[ -n "$CI" ] || [ -n "$SEMANTIC_RELEASE" ]'
 
   prepare:prune:
     cmds:
       - task: prune
     status:
       - '! type node-prune &> /dev/null'
+
+  prepare:release:
+    cmds:
+      - 'true'
+    status:
+      - '[ -z "$SEMANTIC_RELEASE" ]'
 
   prune:
     deps:
@@ -258,6 +270,8 @@ tasks:
       success: Successfully pruned the `node_modules/` folder
     cmds:
       - node-prune
+
+  publish: 'true'
 
   start:
     deps:
@@ -424,3 +438,5 @@ tasks:
       success: Successfully ran `{{.NPX_HANDLE}}typesync`
     cmds:
       - '{{.NPX_HANDLE}}typesync'
+
+  verify: 'true'
