@@ -31,7 +31,7 @@ specifiers:
   prettier-plugin-sql: ^0.4.1
   semantic-release-config: latest
   tslib: latest
-  typescript: latest
+  typescript: ^4.5.5
 
 dependencies:
   '@prettier/plugin-php': 0.17.6
