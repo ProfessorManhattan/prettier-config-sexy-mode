@@ -67,7 +67,9 @@
 - [Overview](#overview)
 - [Requirements](#requirements)
   - [Developer Requirements](#developer-requirements)
-- [This Repository (Shared Common)](#this-repository-shared-common)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Plugins](#plugins)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -98,11 +100,71 @@ npm run help
 
 `npm run help` will ensure Bodega is installed and then open an interactive dialog where you can explore and learn about various developer commands.
 
-<a href="#this-repository-shared-common" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
+<a href="#installation" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
 
-## This Repository (Shared Common)
+## Installation
 
-This repository houses files that propagate downstream to project-specific repositories.
+To install this shareable configuration, you should start by adding the project to your `devDependencies` by running:
+
+```shell
+npm install --save-dev prettier-plugin-sexy-mode
+```
+
+After that, you need to add the configuration to your `package.json` file under the `prettier` key. Your `package.json` might look something like this:
+
+```json
+{
+  "name": "mypackage",
+  "version": "1.0.4",
+  ...
+  "devDependencies": {
+    "prettier-plugin-sexy-mode": "^1.0.0"
+  },
+  "prettier": "prettier-plugin-sexy-mode"
+}
+```
+
+For more information on shareable configurations, check out [Prettier's guide](https://prettier.io/docs/en/configuration.html#sharing-configurations).
+
+<a href="#usage" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
+
+## Usage
+
+After installing the package, you can simply run Prettier and it will determine which plugin to use based on the file extension. This logic is mostly baked into each plugin. For example:
+
+```shell
+npm install -g prettier
+prettier --list-different .
+```
+
+The command above will scan through your entire project (if run in the root of the project) and list the files that Prettier has changes for.
+
+<a href="#plugins" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
+
+## Plugins
+
+This configuration attempts to include all the best, well-known Prettier plugins that have lots of stars on GitHub. For your reference, the chart below details which plugins are included:
+
+| Prettier Plugin                                                                                      | Description                                                                                                                                                               | File Types                                                                                  |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [`@prettier/plugin-php`](https://npmjs.com/package/@prettier/plugin-php)                             | Adds support for PHP                                                                                                                                                      | `*.php`                                                                                     |
+| [`@prettier/plugin-pug`](https://npmjs.com/package/@prettier/plugin-pug)                             | Adds support for Pug templates                                                                                                                                            | `*.jade`, `*.pug`                                                                           |
+| [`@prettier/plugin-ruby`](https://npmjs.com/package/@prettier/plugin-ruby)                           | Adds support for Ruby                                                                                                                                                     | `*.rb` and [many more](https://github.com/prettier/plugin-ruby/blob/main/src/plugin.ts#L20) |
+| [`@prettier/plugin-xml`](https://npmjs.com/package/@prettier/plugin-xml)                             | A prettier plugin for XML                                                                                                                                                 | `*.xml` and [many more](https://github.com/prettier/plugin-xml/blob/main/src/plugin.ts#L59) |
+| [`prettier-plugin-go-template`](https://npmjs.com/package/prettier-plugin-go-template)               | Adds support for Go templates                                                                                                                                             | `*.gohtml`, `*.gotmpl`, `*.go.tmpl`, `*.tmpl`, `*.tpl`, `*.html.tmpl`, `*.go.html`          |
+| [`prettier-plugin-csharp`](https://npmjs.com/package/prettier-plugin-csharp)                         | Adds support for C#                                                                                                                                                       | `*.cs`, `*.cake`, `*.cshtml`, `*.csx`                                                       |
+| [`prettier-plugin-ini`](https://npmjs.com/package/prettier-plugin-ini)                               | Adds support for INI files                                                                                                                                                | `*.ini`                                                                                     |
+| [`prettier-plugin-java`](https://npmjs.com/package/prettier-plugin-java)                             | Adds support for Java                                                                                                                                                     | `*.java`                                                                                    |
+| [`prettier-plugin-jsdoc`](https://npmjs.com/package/prettier-plugin-jsdoc)                           | Adds support for JSDoc comments in TypeScript/JavaScript files                                                                                                            | `*.js`, `*.ts`, `*.jsx`, `*.tsx`, `*.mdx`, possibly others                                  |
+| [`prettier-plugin-organize-imports`](https://npmjs.com/package/prettier-plugin-organize-imports)     | Makes Prettier organize your TypeScript imports using the `organizeImports` feature of the TypeScript language service API                                                | `*.js`, `*.jsx`, `*.ts`, `*.tsx`, `*.vue`                                                   |
+| [`prettier-plugin-package-perfection`](https://npmjs.com/package/prettier-plugin-package-perfection) | Sorts the keys and does some auto-formatting of the `package.json` file (uses [prettier-package-json](https://www.npmjs.com/package/prettier-package-json) for the logic) | `package.json`                                                                              |
+| [`prettier-plugin-properties`](https://npmjs.com/package/prettier-plugin-properties)                 | Adds support for `properties` files                                                                                                                                       | `*.properties`                                                                              |
+| [`prettier-plugin-sh`](https://npmjs.com/package/prettier-plugin-sh)                                 | Adds support for running Prettier on shell scripts                                                                                                                        | `*.sh`, `Dockerfile`, `.gitignore`, `.dotenv`, possibly more                                |
+| [`prettier-plugin-solidity`](https://npmjs.com/package/prettier-plugin-solidity)                     | Adds support for Solidity code                                                                                                                                            | `*.sol`                                                                                     |
+| [`prettier-plugin-sql`](https://npmjs.com/package/prettier-plugin-sql)                               | Adds support for SQL                                                                                                                                                      | `*.sql`                                                                                     |
+| [`prettier-plugin-toml`](https://npmjs.com/package/prettier-plugin-toml)                             | Adds support for TOML                                                                                                                                                     | `*.toml`                                                                                    |
+
+It might be important to note that although [@prettier/plugin-python](https://github.com/prettier/plugin-python) is popular on GitHub, we did not include it because the project's README.md suggests using [Black](https://github.com/psf/black) (a Python CLI) instead.
 
 <a href="#contributing" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
 
