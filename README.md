@@ -108,7 +108,7 @@ npm run help
 To install this shareable configuration, you should start by adding the project to your `devDependencies` by running:
 
 ```shell
-npm install --save-dev prettier-plugin-sexy-mode
+npm install --save-dev prettier-config-sexy-mode
 ```
 
 After that, you need to add the configuration to your `package.json` file under the `prettier` key. Your `package.json` might look something like this:
@@ -119,9 +119,9 @@ After that, you need to add the configuration to your `package.json` file under 
   "version": "1.0.4",
   ...
   "devDependencies": {
-    "prettier-plugin-sexy-mode": "^1.0.0"
+    "prettier-config-sexy-mode": "^1.0.0"
   },
-  "prettier": "prettier-plugin-sexy-mode"
+  "prettier": "prettier-config-sexy-mode"
 }
 ```
 
